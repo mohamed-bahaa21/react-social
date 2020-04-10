@@ -1,8 +1,10 @@
 const functions = require('firebase-functions');
+const admin = require('firebase-admin')
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-exports.helloWorld = functions.https.onRequest((request, response) => {
- response.send("Hello from Firebase!");
-});
+admin.initializeApp();
+
+const express = require('express')
+const app = express()
+
+// https://baseurl.com/ap/
+exports.api = functions.region('europe-west1').https.onRequest(app)
